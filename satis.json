@@ -7,6 +7,18 @@
             "url": "https://github.com/Allen-adVentures/OcrTools.git"
         },
         {
+            "type": "vcs",
+            "url": "https://github.com/symfony/symfony.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/laravel/framework.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/monolog/monolog.git"
+        },
+        {
             "type": "composer",
             "url": "https://packagist.org"
         }
