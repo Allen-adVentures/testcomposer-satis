@@ -5,10 +5,29 @@
         {
             "type": "vcs",
             "url": "https://github.com/Allen-adVentures/OcrTools.git"
+        },
+        {
+            "type": "composer",
+            "url": "https://packagist.org"
         }
     ],
     "require": {
-        "lmf/ocr-tools": "v1.0.2"
+        "lmf/ocr-tools": "v1.0.3",
+        "monolog/monolog": "^3.0",
+        "guzzlehttp/guzzle": "^7.0",
+        "symfony/http-foundation": "^6.0",
+        "laravel/framework": "^10.0",
+        "doctrine/orm": "^2.0",
+        "twig/twig": "^3.0",
+        "phpunit/phpunit": "^10.0",
+        "vlucas/phpdotenv": "^5.0",
+        "ramsey/uuid": "^4.0",
+        "league/flysystem": "^3.0",
+        "psr/log": "^3.0",
+        "psr/cache": "^3.0",
+        "psr/container": "^2.0",
+        "psr/http-message": "^1.0",
+        "psr/simple-cache": "^3.0"
     },
     "require-all": false,
     "require-dependencies": true,
