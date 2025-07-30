@@ -17,6 +17,8 @@
         "secure-http": true
     },
     "output-dir": "public",
+    "output-html": true,
+    "allow-seo-indexing": true,
     "archive": {
         "directory": "dist",
         "format": "tar",
