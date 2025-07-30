@@ -1,6 +1,6 @@
 {
     "name": "lmf/composer-satis",
-    "homepage": "https://8240a2e5bf16.ngrok-free.app",
+    "homepage": "https://allen-adventures.github.io/testcomposer-satis",
     "repositories": [
         {
             "type": "vcs",
@@ -20,6 +20,7 @@
     "archive": {
         "directory": "dist",
         "format": "tar",
+        "prefix-url": "https://allen-adventures.github.io/testcomposer-satis/dist",
         "skip-dev": false
     }
 }
