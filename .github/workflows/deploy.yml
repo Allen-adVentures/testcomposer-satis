@@ -13,18 +13,18 @@ jobs:
       uses: actions/checkout@v4
       with:
         fetch-depth: 0
-        
+
     - name: Setup PHP
       uses: shivammathur/setup-php@v2
       with:
         php-version: '8.2'
-        
+
     - name: Install Composer dependencies
       run: composer install --no-dev --optimize-autoloader
-      
+
     - name: Build Satis repository
       run: php bin/satis build satis.json public/
-      
+
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
