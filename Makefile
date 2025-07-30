@@ -23,5 +23,9 @@ deploy: build
 install:
 	composer install --no-dev --optimize-autoloader
 
+# Update dependencies (if needed)
+update:
+	composer update --no-dev
+
 # Full build and deploy
 all: install build deploy 
