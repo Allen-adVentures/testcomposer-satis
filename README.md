@@ -15,6 +15,20 @@ This repository is configured for automatic deployment to GitHub Pages. The Sati
 2. **Push Changes**: The GitHub Actions workflow will automatically build and deploy when you push to the main branch
 3. **Access Your Repository**: Your Composer repository will be available at the GitHub Pages URL
 
+### Manual Deployment (Alternative)
+
+If you prefer manual deployment, you can use the provided Makefile:
+
+```bash
+# Build and deploy manually
+make all
+
+# Or step by step:
+make install
+make build
+make deploy
+```
+
 ### Using the Repository:
 
 Add this to your project's `composer.json`:
@@ -29,6 +43,8 @@ Add this to your project's `composer.json`:
     ]
 }
 ```
+
+**NOTE**: The actual composer repository is on the `gh-pages` branch.
 
 ---
 
