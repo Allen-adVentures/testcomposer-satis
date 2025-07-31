@@ -13,12 +13,10 @@
     ],
     "require": {
         "lmf/ocr-tools": "v1.0.3",
-        "vlucas/phpdotenv": "^5.0",
-        "erusev/parsedown": "^1.7",
-        "ramsey/uuid": "^4.0"
+        "vlucas/phpdotenv": "^5.0"
     },
     "require-all": false,
-    "require-dependencies": true,
+    "require-dependencies": false,
     "require-dev-dependencies": false,
     "config": {
         "secure-http": true
@@ -30,6 +28,6 @@
         "directory": "dist",
         "format": "tar",
         "prefix-url": "https://allen-adventures.github.io/testcomposer-satis/dist",
-        "skip-dev": false
+        "skip-dev": true
     }
 }
