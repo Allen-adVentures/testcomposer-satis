@@ -1,0 +1,13 @@
+{
+    "packages": [],
+    "includes": {
+        "include/all$c81c0c12abcec5a096470f04e495358aed7bc400.json": {
+            "sha1": "c81c0c12abcec5a096470f04e495358aed7bc400"
+        }
+    },
+    "metadata-url": "/testcomposer-satis/p2/%package%.json",
+    "available-packages": [
+        "lmf/ocr-tools",
+        "vlucas/phpdotenv"
+    ]
+}
