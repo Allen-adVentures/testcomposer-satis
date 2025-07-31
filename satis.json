@@ -8,23 +8,22 @@
         },
         {
             "type": "vcs",
-            "url": "https://github.com/symfony/symfony.git"
+            "url": "https://github.com/thephpleague/uuid.git"
         },
         {
             "type": "vcs",
-            "url": "https://github.com/laravel/framework.git"
+            "url": "https://github.com/erusev/parsedown.git"
         },
         {
             "type": "vcs",
-            "url": "https://github.com/monolog/monolog.git"
-        },
-        {
-            "type": "composer",
-            "url": "https://packagist.org"
+            "url": "https://github.com/vlucas/phpdotenv.git"
         }
     ],
     "require": {
-        "lmf/ocr-tools": "v1.0.3"
+        "lmf/ocr-tools": "v1.0.3",
+        "league/uuid": "*",
+        "erusev/parsedown": "*",
+        "vlucas/phpdotenv": "*"
     },
     "require-all": true,
     "require-dependencies": true,
