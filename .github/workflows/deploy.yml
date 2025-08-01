@@ -12,7 +12,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
       with:
-        fetch-depth: 0
+        fetch-depth: 1
         token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Setup PHP
@@ -20,6 +20,18 @@ jobs:
       with:
         php-version: '8.2'
         disable-extensions: xdebug
+        coverage: none
+
+    - name: Get Composer Cache Directory
+      id: composer-cache
+      run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+    - name: Cache Composer dependencies
+      uses: actions/cache@v3
+      with:
+        path: ${{ steps.composer-cache.outputs.dir }}
+        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+        restore-keys: ${{ runner.os }}-php-
 
     - name: Configure Git
       run: |
@@ -27,7 +39,7 @@ jobs:
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
     - name: Install Composer dependencies
-      run: composer install --no-dev --optimize-autoloader
+      run: composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist
 
     - name: Build Satis repository
       run: php bin/satis build satis.json public/
