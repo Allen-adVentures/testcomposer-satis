@@ -39,17 +39,16 @@ jobs:
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-    # ✅ Inject SSH private key for access to private Git repos
+    # ✅ Securely inject SSH key to access private GitHub repo
     - name: Setup SSH access to GitHub
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        SSH_AUTH_SOCK: /tmp/ssh_agent.sock
       run: |
         mkdir -p ~/.ssh
-        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
-        eval "$(ssh-agent -s)"
-        ssh-add ~/.ssh/id_rsa
         ssh-keyscan github.com >> ~/.ssh/known_hosts
+        ssh-agent -a "$SSH_AUTH_SOCK" > /dev/null
+        ssh-add - <<< "$SSH_PRIVATE_KEY"
 
     - name: Install Composer dependencies
       run: composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist
