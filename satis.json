@@ -4,7 +4,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/Allen-adVentures/OcrTools.git"
+            "url": "git@github.com:Allen-adVentures/OcrTools.git"
         },
         {
             "type": "composer",
