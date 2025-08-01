@@ -5,15 +5,10 @@
         {
             "type": "vcs",
             "url": "git@github.com:Allen-adVentures/OcrTools.git"
-        },
-        {
-            "type": "composer",
-            "url": "https://packagist.org"
         }
     ],
     "require": {
-        "lmf/ocr-tools": "v1.0.3",
-        "vlucas/phpdotenv": "^5.0"
+        "lmf/ocr-tools": "v1.0.3"
     },
     "require-all": false,
     "require-dependencies": false,
