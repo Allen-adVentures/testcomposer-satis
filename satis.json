@@ -23,6 +23,7 @@
         "directory": "dist",
         "format": "tar",
         "prefix-url": "https://allen-adventures.github.io/testcomposer-satis/dist",
-        "skip-dev": true
+        "skip-dev": true,
+        "checksum": true
     }
 }
