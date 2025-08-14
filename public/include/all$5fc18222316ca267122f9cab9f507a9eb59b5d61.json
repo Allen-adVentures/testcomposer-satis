@@ -1,0 +1,159 @@
+{
+    "packages": {
+        "lmf/ocr-tools": {
+            "v1.0.1": {
+                "name": "lmf/ocr-tools",
+                "version": "v1.0.1",
+                "version_normalized": "1.0.1.0",
+                "source": {
+                    "type": "git",
+                    "url": "git@github.com:Allen-adVentures/OcrTools.git",
+                    "reference": "0e4f2af29d33330962e0ec00ce1658775665cdd7"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/Allen-adVentures/OcrTools/zipball/0e4f2af29d33330962e0ec00ce1658775665cdd7",
+                    "reference": "0e4f2af29d33330962e0ec00ce1658775665cdd7",
+                    "shasum": ""
+                },
+                "require": {
+                    "google/cloud-vision": "^2.0",
+                    "php": "^8.1"
+                },
+                "time": "2025-07-28T09:57:39+00:00",
+                "type": "library",
+                "extra": {
+                    "laravel": {
+                        "providers": ["OcrTools\\OcrServiceProvider"]
+                    }
+                },
+                "autoload": {
+                    "psr-4": {
+                        "OcrTools\\": "src/"
+                    }
+                },
+                "license": ["MIT"],
+                "description": "Laravel package for OCR scanning and parsing using Google Cloud Vision API.",
+                "support": {
+                    "source": "https://github.com/Allen-adVentures/OcrTools/tree/v1.0.1",
+                    "issues": "https://github.com/Allen-adVentures/OcrTools/issues"
+                }
+            },
+            "v1.0.2": {
+                "name": "lmf/ocr-tools",
+                "version": "v1.0.2",
+                "version_normalized": "1.0.2.0",
+                "source": {
+                    "type": "git",
+                    "url": "git@github.com:Allen-adVentures/OcrTools.git",
+                    "reference": "e9d565272f2c9f7702f688800a94e953a47e23b8"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/Allen-adVentures/OcrTools/zipball/e9d565272f2c9f7702f688800a94e953a47e23b8",
+                    "reference": "e9d565272f2c9f7702f688800a94e953a47e23b8",
+                    "shasum": ""
+                },
+                "require": {
+                    "google/cloud-vision": "^2.0",
+                    "php": "^8.1"
+                },
+                "time": "2025-07-29T08:59:01+00:00",
+                "type": "library",
+                "extra": {
+                    "laravel": {
+                        "providers": ["OcrTools\\OcrServiceProvider"]
+                    }
+                },
+                "autoload": {
+                    "psr-4": {
+                        "OcrTools\\": "src/"
+                    }
+                },
+                "license": ["MIT"],
+                "description": "Laravel package for OCR scanning and parsing using Google Cloud Vision API.",
+                "support": {
+                    "source": "https://github.com/Allen-adVentures/OcrTools/tree/v1.0.3",
+                    "issues": "https://github.com/Allen-adVentures/OcrTools/issues"
+                }
+            },
+            "v1.0.3": {
+                "name": "lmf/ocr-tools",
+                "version": "v1.0.3",
+                "version_normalized": "1.0.3.0",
+                "source": {
+                    "type": "git",
+                    "url": "git@github.com:Allen-adVentures/OcrTools.git",
+                    "reference": "e9d565272f2c9f7702f688800a94e953a47e23b8"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/Allen-adVentures/OcrTools/zipball/e9d565272f2c9f7702f688800a94e953a47e23b8",
+                    "reference": "e9d565272f2c9f7702f688800a94e953a47e23b8",
+                    "shasum": ""
+                },
+                "require": {
+                    "google/cloud-vision": "^2.0",
+                    "php": "^8.1"
+                },
+                "time": "2025-07-29T08:59:01+00:00",
+                "type": "library",
+                "extra": {
+                    "laravel": {
+                        "providers": ["OcrTools\\OcrServiceProvider"]
+                    }
+                },
+                "autoload": {
+                    "psr-4": {
+                        "OcrTools\\": "src/"
+                    }
+                },
+                "license": ["MIT"],
+                "description": "Laravel package for OCR scanning and parsing using Google Cloud Vision API.",
+                "support": {
+                    "source": "https://github.com/Allen-adVentures/OcrTools/tree/v1.0.3",
+                    "issues": "https://github.com/Allen-adVentures/OcrTools/issues"
+                }
+            },
+            "dev-main": {
+                "name": "lmf/ocr-tools",
+                "version": "dev-main",
+                "version_normalized": "dev-main",
+                "source": {
+                    "type": "git",
+                    "url": "git@github.com:Allen-adVentures/OcrTools.git",
+                    "reference": "e9d565272f2c9f7702f688800a94e953a47e23b8"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/Allen-adVentures/OcrTools/zipball/e9d565272f2c9f7702f688800a94e953a47e23b8",
+                    "reference": "e9d565272f2c9f7702f688800a94e953a47e23b8",
+                    "shasum": ""
+                },
+                "require": {
+                    "google/cloud-vision": "^2.0",
+                    "php": "^8.1"
+                },
+                "time": "2025-07-29T08:59:01+00:00",
+                "default-branch": true,
+                "type": "library",
+                "extra": {
+                    "laravel": {
+                        "providers": ["OcrTools\\OcrServiceProvider"]
+                    }
+                },
+                "autoload": {
+                    "psr-4": {
+                        "OcrTools\\": "src/"
+                    }
+                },
+                "license": ["MIT"],
+                "description": "Laravel package for OCR scanning and parsing using Google Cloud Vision API.",
+                "support": {
+                    "source": "https://github.com/Allen-adVentures/OcrTools/tree/v1.0.3",
+                    "issues": "https://github.com/Allen-adVentures/OcrTools/issues"
+                }
+            }
+        }
+    }
+}

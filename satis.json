@@ -4,11 +4,11 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "git@github.com:Allen-adVentures/OcrTools.git"
+            "url": "https://github.com/Allen-adVentures/OcrTools.git"
         }
     ],
     "require": {
-        "lmf/ocr-tools": "v1.0.3"
+        "lmf/ocr-tools": "*"
     },
     "require-all": false,
     "require-dependencies": false,
@@ -18,12 +18,5 @@
     },
     "output-dir": "public",
     "output-html": true,
-    "allow-seo-indexing": true,
-    "archive": {
-        "directory": "dist",
-        "format": "tar",
-        "prefix-url": "https://allen-adventures.github.io/testcomposer-satis/dist",
-        "skip-dev": true,
-        "checksum": true
-    }
+    "allow-seo-indexing": true
 }

@@ -1,63 +1,47 @@
 name: Deploy to GitHub Pages
-#1
+
 on:
   push:
-    branches: [ main ]
-  workflow_dispatch:
+    branches: [ main ]  # Run whenever you push to main
+  workflow_dispatch:     # Allow manual trigger
+  repository_dispatch:   # Allow external repos to trigger rebuilds
+    types: [satis.update]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 1
-        token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-    - name: Setup PHP
-      uses: shivammathur/setup-php@v2
-      with:
-        php-version: '8.2'
-        disable-extensions: xdebug
-        coverage: none
+      - name: Install PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 'latest'
 
-    - name: Get Composer Cache Directory
-      id: composer-cache
-      run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+      - name: Configure Composer authentication for GitHub (global)
+        run: composer config --global --auth github-oauth.github.com "${{ secrets.ACCESS_TOKEN }}"
 
-    - name: Cache Composer dependencies
-      uses: actions/cache@v3
-      with:
-        path: ${{ steps.composer-cache.outputs.dir }}
-        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
-        restore-keys: ${{ runner.os }}-php-
+      - name: Install Composer dependencies
+        run: composer install --no-dev --prefer-dist --no-progress --no-suggest
 
-    - name: Configure Git
-      run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+      - name: Build Satis
+        env:
+          REPOSITORY_URL: ${{ github.event.client_payload.repository_url }}
+        run: |
+          if [ -n "$REPOSITORY_URL" ]; then
+            php bin/satis build --repository-url "$REPOSITORY_URL" satis.json public/
+          else
+            php bin/satis build satis.json public/
+          fi
 
-    # ✅ Securely inject SSH key to access private GitHub repo
-    - name: Setup SSH key for private repo
-      run: |
-        mkdir -p ~/.ssh
-        echo "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
-        ssh-keyscan github.com >> ~/.ssh/known_hosts
-
-    - name: Install Composer dependencies
-      run: composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist
-
-    - name: Build Satis repository
-      run: php bin/satis build satis.json public/
-
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./public
-        force_orphan: true
-        user_name: 'github-actions[bot]'
-        user_email: 'github-actions[bot]@users.noreply.github.com'
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          force_orphan: true
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
