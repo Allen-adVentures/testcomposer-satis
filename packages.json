@@ -1,0 +1,12 @@
+{
+    "packages": [],
+    "includes": {
+        "include/all$70f91734fb7e36fba808477c12a1b602ecd75d6e.json": {
+            "sha1": "70f91734fb7e36fba808477c12a1b602ecd75d6e"
+        }
+    },
+    "metadata-url": "/testcomposer-satis/p2/%package%.json",
+    "available-packages": [
+        "lmf/ocr-tools"
+    ]
+}
